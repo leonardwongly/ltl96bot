@@ -1,14 +1,33 @@
 {
   "name": "ltl96bot",
   "version": "1.0.0",
-  "description": "",
+  "description": "A bot for Leonard's Wong Portfolio",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Leonard Wong",
   "license": "ISC",
   "dependencies": {
-    "node-telegram-bot-api": "^0.27.1"
-  }
+    "node-telegram-bot-api": "^0.27.1",
+    "ejs": "2.5.6",
+    "express": "4.15.2"
+  },
+  "engines": {
+    "node": "4.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leothelion96/ltl96bot"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "Leonard",
+    "Leonard Wong",
+    "ltl96",
+    "ltl96bot",
+    "leothelion96",
+    "Leonard Wong Portfolio Bot"
+  ]
 }
