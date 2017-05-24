@@ -28,8 +28,8 @@ telegram.on("text", (message) => {
 telegram.on("text", (message) => {
   if(message.text.toLowerCase().indexOf("/name") === 0){
     telegram.sendMessage(message.chat.id, "I am a bot with no name");
-    telegram.sendMessage(message.chat.id, "Actually I have name 😀");
-    for (i=0; i<=10000;i++) {
+    telegram.sendMessage(message.chat.id, "Actually I have name 😀\nor not hehe");
+    for (i=0; i<=10;i++) {
       telegram.sendMessage(message.chat.id, i);
     }
   }
