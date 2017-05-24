@@ -30,3 +30,9 @@ telegram.on("text", (message) => {
     telegram.sendMessage(message.chat.id, "I am a bot with no name");
   }
 });
+
+telegram.on("text", (message) => {
+  if(message.text.toLowerCase().indexOf("/start") === 0){
+    telegram.sendMessage(message.chat.id, "Bot started");
+  }
+});
