@@ -23,12 +23,7 @@ var TelegramBot = require('node-telegram-bot-api'),
 
 telegram.on("text", (message) => {
   if (message.text.toLowerCase().indexOf("/help") == 0) {
-    telegram.sendMessage(message.chat.id, "I can help you understand me or Leonard better." 
-    + "\n\nYou can control me by sending these commands:" + 
-    "\n\n/help - List of commands you can send" +
-    "\n/botname - Know who I am" +
-    "\n/website - URL to Leonard's Portfolio" +
-    "\n/experience - Give you the list of experience Leonard has");
+    telegram.sendMessage(message.chat.id, "I can help you understand me or Leonard better.\n\nYou can control me by sending these commands:\n\n/help - List of commands you can send\n/botname - Know who I am\n/website - URL to Leonard's Portfolio\n/experience - Give you the list of experience Leonard has");
   }
   else if(message.text.toLowerCase().indexOf("/name") == 0){
     telegram.sendMessage(message.chat.id, "I am a bot with no name");
