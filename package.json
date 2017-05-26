@@ -15,9 +15,11 @@
   "author": "Leonard Wong",
   "license": "ISC",
   "dependencies": {
-    "node-telegram-bot-api": "^0.27.1",
+    "claudia-bot-builder": "^2.15.0",
     "ejs": "2.5.6",
-    "express": "4.15.2"
+    "express": "4.15.2",
+    "huh": "^2.0.1",
+    "node-telegram-bot-api": "^0.27.1"
   },
   "engines": {
     "node": "4.1.1"
@@ -26,7 +28,6 @@
     "type": "git",
     "url": "https://github.com/leothelion96/ltl96bot"
   },
-
   "cloud-repo-tools": {
     "test": {
       "app": {
@@ -45,5 +46,8 @@
     "ltl96bot",
     "leothelion96",
     "Leonard Wong Portfolio Bot"
-  ]
+  ],
+  "devDependencies": {
+    "claudia": "^2.12.1"
+  }
 }

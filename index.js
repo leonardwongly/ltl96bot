@@ -19,7 +19,7 @@ app.listen(app.get('port'), function() {
 */
 var TelegramBot = require('node-telegram-bot-api'),
     // Be sure to replace YOUR_BOT_TOKEN with your actual bot token on this line.
-    telegram = new TelegramBot("242777033:AAHv7tmVnHNdiSiAdwwXp1Ap1ND9c3vn_64", { polling: true });
+    telegram = new TelegramBot("242777033:AAGRdoWT0J3oeCFeEhqyG50hAXCPk6fcpFs", { polling: true });
 
 telegram.on("text", (message) => {
   if(message.text.toLowerCase().indexOf("/name") == 0){
