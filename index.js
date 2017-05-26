@@ -1,4 +1,4 @@
-var express = require('express');
+/*var express = require('express');
 var app = express();
 
 app.set('port', (process.env.PORT || 5000));
@@ -16,27 +16,19 @@ app.get('/', function(request, response) {
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
-
+*/
 var TelegramBot = require('node-telegram-bot-api'),
     // Be sure to replace YOUR_BOT_TOKEN with your actual bot token on this line.
-    telegram = new TelegramBot("242777033:AAF7Y35QRQBuMcvhTYmwyBK9BXqizwBGPgo", { polling: true });
+    telegram = new TelegramBot("242777033:AAHv7tmVnHNdiSiAdwwXp1Ap1ND9c3vn_64", { polling: true });
 
 telegram.on("text", (message) => {
-  telegram.sendMessage(message.chat.id, "Hello world");
-});
-
-telegram.on("text", (message) => {
-  if(message.text.toLowerCase().indexOf("/name") === 0){
+  if(message.text.toLowerCase().indexOf("/name") == 0){
     telegram.sendMessage(message.chat.id, "I am a bot with no name");
-    telegram.sendMessage(message.chat.id, "Actually I have name 😀\nor not hehe");
-    for (i=0; i<=10;i++) {
-      telegram.sendMessage(message.chat.id, i);
-    }
   }
-});
-
-telegram.on("text", (message) => {
-  if(message.text.toLowerCase().indexOf("/start") === 0){
-    telegram.sendMessage(message.chat.id, "Bot started");
-  }
+  else if (message.text.toLowerCase().indexOf("/hello") == 0) {
+  telegram.sendMessage(message.chat.id, "Hello world");
+}
+else {
+  telegram.sendMessage(message.chat.id,"Unidentified command. Please type /help for the list of commands.");
+}
 });
