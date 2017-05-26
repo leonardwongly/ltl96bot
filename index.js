@@ -1,4 +1,4 @@
-/*var express = require('express');
+var express = require('express');
 var app = express();
 
 app.set('port', (process.env.PORT || 5000));
@@ -16,7 +16,7 @@ app.get('/', function(request, response) {
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
-*/
+
 var TelegramBot = require('node-telegram-bot-api'),
     // Be sure to replace YOUR_BOT_TOKEN with your actual bot token on this line.
     telegram = new TelegramBot("242777033:AAGRdoWT0J3oeCFeEhqyG50hAXCPk6fcpFs", { polling: true });
