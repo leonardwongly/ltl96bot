@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2017 Leonard Wong
+ * Licensed under Apache License 2.0
+ * Check License.md for details
+ */
+
+//Check Node app running
 var express = require('express');
 var app = express();
 
@@ -17,19 +24,207 @@ app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
 
+//Telegram credentials
 var TelegramBot = require('node-telegram-bot-api'),
-    // Be sure to replace YOUR_BOT_TOKEN with your actual bot token on this line.
     telegram = new TelegramBot("242777033:AAGRdoWT0J3oeCFeEhqyG50hAXCPk6fcpFs", { polling: true });
 
 telegram.on("text", (message) => {
-  if (message.text.toLowerCase().indexOf("/help") == 0) {
-    telegram.sendMessage(message.chat.id, "I can help you understand me or Leonard better.\n\nYou can control me by sending these commands:\n\n/help - List of commands you can send\n/botname - Know who I am\n/website - URL to Leonard's Portfolio\n/experience - Give you the list of experience Leonard has");
+  //Commands /help & /start
+  if ((message.text.toLowerCase().indexOf("/help") == 0) || (message.text.toLowerCase().indexOf("/start") == 0)) {
+    telegram.sendMessage(message.chat.id, 
+    "Hi, I am ltl96bot. I can help you understand Leonard better. 🙂"
+    + "\n\nYou can control me by sending these commands:" + 
+    "\n\n/help - List of commands you can send" +
+    "\n/who - A short introduction of who Leonard is" +
+    "\n/summary - A summary of who Leonard is" +
+    "\n/website - URL to Leonard's Portfolio" +
+    "\n/education - List of education Leonard goes through" +
+    "\n/volunteer - List of volunteer experience Leonard has" +
+    "\n/experience - List of job experience Leonard has" +
+    "\n/skills - List of skills Leonard has" +
+    "\n/honors - List of honors Leonard has" +
+    "\n/certifications - List of certifications Leonard has" +
+    "\n/projects - List of projects Leonard has done" + 
+    "\n/courses - List of courses Leonard has completed" +
+    "\n/social - List of social network Leonard has" + 
+    "\n/facebook - Leonard's Facebook profile link" +
+    "\n/twitter - Leonard's Twitter profile link" +
+    "\n/instagram - Leonard's Instagram profile link" +
+    "\n/snapchat - Leonard's Snapchat profile link" +
+    "\n/linkedin - Leonard's Linkedin profile link" +
+    "\n/email - Leonard's emaill address" +
+    "\n/telegram - Leonard's telegram account");
   }
-  else if(message.text.toLowerCase().indexOf("/name") == 0){
-    telegram.sendMessage(message.chat.id, "I am a bot with no name");
+  else if(message.text.toLowerCase().indexOf("/who") == 0){
+    telegram.sendMessage(message.chat.id, "Leonard is going to be a student at Singapore Management University in 2019." +
+    "He will concurrently read Bachelor of Science (Information Systems): Information Systems Major & Master of Applied Information Systems: Software & Cyber-Physical Systems track." +
+    "\nHe like technology a lot.\n\nType /social to connect with him. 😆");
   }
-  else if (message.text.toLowerCase().indexOf("/hello") == 0) {
-  telegram.sendMessage(message.chat.id, "Hello world");
+  else if (message.text.toLowerCase().indexOf("/summary") == 0) {
+  telegram.sendMessage(message.chat.id, "Leonard is going to be a student at Singapore Management University (SMU)" +
+  " in 2019, reading Bachelor of Science (Information Systems): Information Systems Major. He had since obtained SMU " +
+  "School of Information Systems (SIS) Local Fast-Track Scholarship where he will concurrently read Master of Applied" +
+  " Information Systems: Software & Cyber-Physical Systems track." +
+  "\n\nPrior to SMU, he was a student at Nanyang Polytechnic (NYP), where he attained Diploma in Business Informatics with Merit." +
+  " At the same time, he found passion in Information Technology that led him to achieved 4 Distinctions & 14 A's throughout his studies" +
+  " at NYP while achieved 3 A+, 1 A0 & 1 B0 during his studies in Gachon University as an Exchange Programme Student. During his studies in NYP," +
+  " he was honored to be given the responsibility to lead the team for most of the assignments and all projects, while acquiring skills that are" +
+  " commonly used in the workplace such as Java, PHP, SQL, HTML, CSS & C#. In addition to that, he attained GPA 4.0 in Y1S1 & Y3S1 while attained GPA 3.98 in Y1S2." +
+  " Leonard is a driven person and always seek to produce high-quality work that he is proud to call it his own. He is also conscientiously striving to acquire new knowledge and skills as and when he can." + 
+  "\n\nOther than his education, he deeply believes everyone in the world has the rights to learn, regardless of country, race, religion, gender & financial capabilities." +
+  " Moreover, preserving our environment should not be a policy, a law or a program but a norm." +
+  "\n\nLeonard would love to work in a company that continuously strive to do better and see challenges & obstacles as opportunities." +
+  " But most importantly, the company values its employees and provides essential care and training to ensure their employees stay ahead of the competitions." +
+  " In addition to that, it will be great if the company is relentlessly contributing to the environment and education.");
+}
+else if(message.text.toLowerCase().indexOf("/website") == 0) {
+  telegram.sendMessage(message.chat.id, "You can visit the website at: https://ltl96.tech");
+}
+else if(message.text.toLowerCase().indexOf("/education") == 0) {
+  telegram.sendMessage(message.chat.id, "In 2019, Leonard is going to be a student at Singapore Management University (SMU) where he will concurrently read Bachelor of Science (Information Systems): Information Systems Major" +
+  " & Master of Applied Information Systems: Software & Cyber-Physical Systems track" +
+  "\n\nIn 2017, he graduated with a Diploma in Business Informatics with Merit from Nanyang Polytechnic (NYP)" +
+  "\nDuring his studies in NYP, he was an overseas exchange student at Gachon University." +
+  "\n\nHe graduated from Beatty Secondary School & Kheng Cheng School in 2013 & 2008 respectively");
+}
+else if (message.text.toLowerCase().indexOf("/volunteer") == 0) {
+  telegram.sendMessage(message.chat.id, "Leonard had volunteered in NYP School of Information Technology Freshman Orientation in March 2015 as Publicity Member." +
+  "He also volunteered at NYP Open House 2015, including visitng Beatty Secondary School as NYP representative");
+}
+else if (message.text.toLowerCase().indexOf("/experience") == 0) {
+telegram.sendMessage(message.chat.id, "Leonard worked in Jobook Singapore Pte Ltd between July 2016 to October 2016 as an Intern." +
+"\nHe also worked at SamMobile between July 2013 to December 2013 as Contributing Writer.");
+}
+else if (message.text.toLowerCase().indexOf("/skills") == 0) {
+  telegram.sendMessage(message.chat.id, "Leonard have these skills:\n" +
+  "HTML" +
+  "\nCSS" +
+  "\nJavaScript" + 
+  "\njQuery" +
+  "\nPHP" +
+  "\nC#" +
+  "\nASP.NET" +
+  "\nJava" +
+  "\nSQL" +
+  "\nNode.js" +
+  "\nMicrosoft Azure" +
+  "\nStripe" +
+  "\nPayPal SDK" +
+  "\nBraintree" +
+  "\nAdobe Premiere" +
+  "\nTwilio" +
+  "\nMaterializeCSS" +
+  "\nObject Oriented Programming" +
+  "\nFinal Cut Pro" +
+  "\nMobile Technology" +
+  "\nStrategic Planning" +
+  "\nComputational Thinking" +
+  "\nTeam Leadership" +
+  "\nTeam Player");
+}
+else if (message.text.toLowerCase().indexOf("/honors") == 0) {
+telegram.sendMessage(message.chat.id, "Leonard have these Honors:\n" +
+"SMU SIS Local Fast-Track Scholarship" +
+"\nDirector's List AY2016/2017 Semester 2" +
+"\nDirector's List AY2016/2017 Semester 1" +
+"\nDirector's List AY2015/2016 Semester 1" +
+"\nDirector's List AY2014/2015 Semester 2" +
+"\nDirector's List AY2014/2015 Semester 1" +
+"\nEdusave Good Progress Award" +
+"\nBeattyian of the Term" +
+"\nEdusave Merit Bursary");
+}
+else if (message.text.toLowerCase().indexOf("/certifications") == 0) {
+telegram.sendMessage(message.chat.id, "Leonard have these Certifications:\n" +
+"Diploma in Business Informatics with Merit" +
+"\nHackathon@SG 2015" +
+"\nGCE O-Level" +
+"\nGCE N-Level");
+}
+else if (message.text.toLowerCase().indexOf("/projects") == 0) {
+  telegram.sendMessage(message.chat.id,"Leonard did these projects:\n" +
+  "Personal Portfolio" +
+  "\nPersonal Mobility Devices Renting Platform" +
+  "\nNYP Student Attendance System (Final Year Project)" +
+  "\nE-Business & Project" +
+  "\nObject-Oriented Programming" +
+  "\nWeb Applications Development");
+}
+else if (message.text.toLowerCase().indexOf("/courses") == 0) {
+  telegram.sendMessage(message.chat.id, "Leonard went through these courses:\n" +
+  "Principles of Accounting" +
+  "\nEssentials of Marketing" +
+  "\nComputing Mathematics" +
+  "\nData Structure & Programming Techniques" +
+  "\nWeb Applications Development" +
+  "\nLaw & Ethics of IT" +
+  "\nPillars of Life" +
+  "\nEconomics & Everyday Life" +
+  "\nBusiness Communication 1" +
+  "\nBusiness Statistics" +
+  "\nPrinciples of Economics" +
+  "\nNetworking Essentials" +
+  "\nObject-Oriented Programming & Project" +
+  "\nBecoming An Entrepreneur" +
+  "\nEffective Presentation Skills" +
+  "\nBusiness Communication 2" +
+  "\nBusiness Environment" +
+  "\nFinancial Management" +
+  "\nDatabase Management Systems" +
+  "\nE-Business & Project" +
+  "\nNational Education" +
+  "\nDiscovering I&E Spirit in Beijing" +
+  "\nCreating Short Films" +
+  "\nInvestment Theory" +
+  "\nInternet Business and E-Commerce" +
+  "\nEvent Mangement" +
+  "\nOrganisational Behaviour" +
+  "\nHuman Resource Management" +
+  "\nFinal Year Project" +
+  "\nInternship Programme" +
+  "\nCritical Lifeskills for Professional Success" +
+  "\nService Science And Innovation" +
+  "\nCloud Computing for Business Applications" +
+  "\nServices Marketing Mangement" +
+  "\nBusiness Informatics Project" +
+  "\nInfosecurity Technology");
+}
+else if (message.text.toLowerCase().indexOf("/social") == 0) {
+  telegram.sendMessage(message.chat.id, "You can find Leonard in these social networks:\n" +
+  "Facebook: https://www.facebook.com/leothelion96" +
+  "\nTwitter: https://twitter.com/leothelion96" +
+  "\nInstagram: https://www.instagram.com/leothelion_96/" +
+  "\nSnapchat: https://www.snapchat.com/add/leothelion2302" +
+  "\nLinkedin: https://www.linkedin.com/in/leonard-wong-972612b8/" +
+  "\nTelegram: @leothelion96");
+}
+else if (message.text.toLowerCase().indexOf("/facebook") == 0) {
+  telegram.sendMessage(message.chat.id, "You can find Leonard's Facebook profile at "
+  + "https://www.facebook.com/leothelion96");
+}
+else if (message.text.toLowerCase().indexOf("/twitter") == 0) {
+  telegram.sendMessage(message.chat.id, "You can find Leonard's Twitter profile at " +
+  "https://twitter.com/leothelion96");
+}
+else if (message.text.toLowerCase().indexOf("/instagram") == 0) {
+  telegram.sendMessage(message.chat.id, "You can find Leonard's Instagram profile at " +
+  "https://www.instagram.com/leothelion_96/");
+}
+else if (message.text.toLowerCase().indexOf("/snapchat") == 0) {
+  telegram.sendMessage(message.chat.id, "You can find Leonard's Snapchat at " +
+  "https://www.snapchat.com/add/leothelion2302");
+}
+else if (message.text.toLowerCase().indexOf("/linkedin") == 0) {
+  telegram.sendMessage(message.chat.id, "You can find Leonard's Linkedin profile at " +
+  "https://www.linkedin.com/in/leonard-wong-972612b8/");
+}
+else if (message.text.toLowerCase().indexOf("/email") == 0) {
+  telegram.sendMessage(message.chat.id, "You can send email to Leonard at " +
+  "leonard@ltl96.tech");
+} 
+else if (message.text.toLowerCase().indexOf("/telegram") == 0) {
+  telegram.sendMessage(message.chat.id, "You can find Leonard's Telegram at " +
+  "@leothelion96");
 }
 else {
   telegram.sendMessage(message.chat.id,"Unidentified command. Please type /help for the list of commands.");
