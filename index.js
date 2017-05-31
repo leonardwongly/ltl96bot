@@ -60,7 +60,7 @@ function updateHelp() {
     }
     else {
       connection2.execSql(request2);
-      console.log("Database Updated");
+      console.log("Data Updated");
     }
   });
   connection2.end;
@@ -87,7 +87,7 @@ function updateWho() {
     }
     else {
       connection3.execSql(request3);
-      console.log("Database Updated");
+      console.log("Data Updated");
     }
   });
   connection3.end;
@@ -114,7 +114,7 @@ function updateSummary() {
     }
     else {
       connection4.execSql(request4);
-      console.log("Database Updated");
+      console.log("Data Updated");
     }
   });
   connection4.end;
@@ -141,7 +141,7 @@ function updateWebsite() {
     }
     else {
       connection5.execSql(request5);
-      console.log("Database Updated");
+      console.log("Data Updated");
     }
   });
   connection5.end;
@@ -168,7 +168,7 @@ function updateVolunteer() {
     }
     else {
       connection6.execSql(request6);
-      console.log("Database Updated");
+      console.log("Data Updated");
     }
   });
   connection6.end;
@@ -195,7 +195,7 @@ function updateEducation() {
     }
     else {
       connection6.execSql(request6);
-      console.log("Database Updated");
+      console.log("Data Updated");
     }
   });
   connection6.end;
@@ -222,7 +222,7 @@ function updateExperience() {
     }
     else {
       connection7.execSql(request7);
-      console.log("Database Updated");
+      console.log("Data Updated");
     }
   });
   connection7.end;
@@ -249,7 +249,7 @@ function updateSkills() {
     }
     else {
       connection8.execSql(request8);
-      console.log("Database Updated");
+      console.log("Data Updated");
     }
   });
   connection8.end;
@@ -276,7 +276,7 @@ function updatehonors() {
     }
     else {
       connection9.execSql(request9);
-      console.log("Database Updated");
+      console.log("Data Updated");
     }
   });
   connection9.end;
@@ -303,7 +303,7 @@ function updateCertifications() {
     }
     else {
       connection10.execSql(request10);
-      console.log("Database Updated");
+      console.log("Data Updated");
     }
   });
   connection10.end;
@@ -330,11 +330,12 @@ function updateProjects() {
     }
     else {
       connection11.execSql(request11);
-      console.log("Database Updated");
+      console.log("Data Updated");
     }
   });
   connection11.end;
 }
+
 
 function updateCourses() {
   console.log("Updating /courses");
@@ -357,7 +358,7 @@ function updateCourses() {
     }
     else {
       connection12.execSql(request12);
-      console.log("Database Updated");
+      console.log("Data Updated");
     }
   });
   connection12.end;
@@ -384,7 +385,7 @@ function updateSocial() {
     }
     else {
       connection13.execSql(request13);
-      console.log("Database Updated");
+      console.log("Data Updated");
     }
   });
   connection13.end;
@@ -411,7 +412,7 @@ function updateFacebook() {
     }
     else {
       connection14.execSql(request14);
-      console.log("Database Updated");
+      console.log("Data Updated");
     }
   });
   connection14.end;
@@ -438,7 +439,7 @@ function updateTwitter() {
     }
     else {
       connection15.execSql(request15);
-      console.log("Database Updated");
+      console.log("Data Updated");
     }
   });
   connection15.end;
@@ -465,7 +466,7 @@ function updateInstagram() {
     }
     else {
       connection16.execSql(request16);
-      console.log("Database Updated");
+      console.log("Data Updated");
     }
   });
   connection16.end;
@@ -492,7 +493,7 @@ function updateSnapchat() {
     }
     else {
       connection17.execSql(request17);
-      console.log("Database Updated");
+      console.log("Data Updated");
     }
   });
   connection17.end;
@@ -519,7 +520,7 @@ function updateLinkedin() {
     }
     else {
       connection18.execSql(request18);
-      console.log("Database Updated");
+      console.log("Data Updated");
     }
   });
   connection18.end;
@@ -546,7 +547,7 @@ function updateEmail() {
     }
     else {
       connection19.execSql(request19);
-      console.log("Database Updated");
+      console.log("Data Updated");
     }
   });
   connection19.end;
@@ -573,7 +574,7 @@ function updateTelegram() {
     }
     else {
       connection20.execSql(request20);
-      console.log("Database Updated");
+      console.log("Data Updated");
     }
   });
   connection20.end;
@@ -600,17 +601,41 @@ function updateUnidentified() {
     }
     else {
       connection21.execSql(request21);
-      console.log("Database Updated");
+      console.log("Data Updated");
     }
   });
   connection21.end;
 }
+  
+
 
 //Telegram credentials
 var TelegramBot = require('node-telegram-bot-api'),
     telegram = new TelegramBot("242777033:AAGRdoWT0J3oeCFeEhqyG50hAXCPk6fcpFs", { polling: true });
 
 telegram.on("text", (message) => {
+
+  console.log("Inserting Comment...");
+  request22 = new Request(
+    "INSERT INTO ltl96Comment (comment) VALUES('" + message.text + "')",
+    function (err, rowCount, rows) {
+      console.log(rowCount + ' row(s) inserted');
+    }
+  );
+
+  var connection22 = new Connection(config);
+
+  connection22.on('connect', function (err) {
+    if (err) {
+      console.log(err)
+    }
+    else {
+      connection22.execSql(request22);
+      console.log("Data Inserted");
+    }
+  });
+  connection22.end;
+
   //Commands /help & /start
   if ((message.text.toLowerCase().indexOf("/help") == 0) || (message.text.toLowerCase().indexOf("/start") == 0)) {
     telegram.sendMessage(message.chat.id, 
@@ -646,9 +671,7 @@ telegram.on("text", (message) => {
   }
   else if (message.text.toLowerCase().indexOf("/summary") == 0) {
   telegram.sendMessage(message.chat.id, "Leonard is going to be a student at Singapore Management University (SMU)" +
-  " in 2019, reading Bachelor of Science (Information Systems): Information Systems Major. He had since obtained SMU " +
-  "School of Information Systems (SIS) Local Fast-Track Scholarship where he will concurrently read Master of Applied" +
-  " Information Systems: Software & Cyber-Physical Systems track." +
+  " in 2019, reading Bachelor of Science (Information Systems): Information Systems Major." +
   "\n\nPrior to SMU, he was a student at Nanyang Polytechnic (NYP), where he attained Diploma in Business Informatics with Merit." +
   " At the same time, he found passion in Information Technology that led him to achieved 4 Distinctions & 14 A's throughout his studies" +
   " at NYP while achieved 3 A+, 1 A0 & 1 B0 during his studies in Gachon University as an Exchange Programme Student. During his studies in NYP," +
