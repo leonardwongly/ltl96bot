@@ -665,7 +665,7 @@ telegram.on("text", (message) => {
   }
   else if(message.text.toLowerCase().indexOf("/who") == 0){
     telegram.sendMessage(message.chat.id, "Leonard is going to be a student at Singapore Management University in 2019." +
-    "He will concurrently read Bachelor of Science (Information Systems): Information Systems Major & Master of Applied Information Systems: Software & Cyber-Physical Systems track." +
+   // "He will concurrently read Bachelor of Science (Information Systems): Information Systems Major & Master of Applied Information Systems: Software & Cyber-Physical Systems track." +
     "\nHe like technology a lot.\n\nType /social to connect with him. 😆");
     updateWho()
   }
