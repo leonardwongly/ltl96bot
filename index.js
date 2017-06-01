@@ -690,8 +690,8 @@ else if(message.text.toLowerCase().indexOf("/website") == 0) {
   updateWebsite()
 }
 else if(message.text.toLowerCase().indexOf("/education") == 0) {
-  telegram.sendMessage(message.chat.id, "In 2019, Leonard is going to be a student at Singapore Management University (SMU) where he will concurrently read Bachelor of Science (Information Systems): Information Systems Major" +
-  " & Master of Applied Information Systems: Software & Cyber-Physical Systems track" +
+  telegram.sendMessage(message.chat.id, "In 2019, Leonard is going to be a student at Singapore Management University (SMU) where he will read Bachelor of Science (Information Systems): Information Systems Major" +
+  //" & Master of Applied Information Systems: Software & Cyber-Physical Systems track" +
   "\n\nIn 2017, he graduated with a Diploma in Business Informatics with Merit from Nanyang Polytechnic (NYP)" +
   "\nDuring his studies in NYP, he was an overseas exchange student at Gachon University." +
   "\n\nHe graduated from Beatty Secondary School & Kheng Cheng School in 2013 & 2008 respectively");
