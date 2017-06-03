@@ -15,7 +15,6 @@
   "author": "Leonard Wong",
   "license": "ISC",
   "dependencies": {
-    "claudia-bot-builder": "^2.15.0",
     "ejs": "2.5.6",
     "express": "4.15.2",
     "huh": "^2.0.1",

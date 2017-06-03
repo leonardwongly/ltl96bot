@@ -606,8 +606,168 @@ function updateUnidentified() {
   });
   connection21.end;
 }
-  
 
+function updatePortfolio() {
+  console.log("Updating portfolio");
+  //Reading
+  console.log("Reading rows from ltl96Log Table...Please wait...");
+  // Read all rows from table
+  request22 = new Request(
+    "Update ltl96Log Set portfolio = (Select portfolio From ltl96Log" +
+    " Where logID = 1) + 1 Where logID = 1",
+    function (err, rowCount, rows) {
+      console.log(rowCount + ' row(s) updated ');
+    }
+  );
+
+  var connection22 = new Connection(config);
+
+  connection22.on('connect', function (err) {
+    if (err) {
+      console.log(err)
+    }
+    else {
+      connection22.execSql(request22);
+      console.log("Data Updated");
+    }
+  });
+  connection22.end;
+}
+
+function updatePMD() {
+  console.log("Updating PMD");
+  //Reading
+  console.log("Reading rows from ltl96Log Table...Please wait...");
+  // Read all rows from table
+  request23 = new Request(
+    "Update ltl96Log Set pmd = (Select pmd From ltl96Log" +
+    " Where logID = 1) + 1 Where logID = 1",
+    function (err, rowCount, rows) {
+      console.log(rowCount + ' row(s) updated ');
+    }
+  );
+
+  var connection23 = new Connection(config);
+
+  connection23.on('connect', function (err) {
+    if (err) {
+      console.log(err)
+    }
+    else {
+      connection23.execSql(request23);
+      console.log("Data Updated");
+    }
+  });
+  connection23.end;
+}
+
+function updateFYP() {
+  console.log("Updating FYP");
+  //Reading
+  console.log("Reading rows from ltl96Log Table...Please wait...");
+  // Read all rows from table
+  request24 = new Request(
+    "Update ltl96Log Set fyp = (Select fyp From ltl96Log" +
+    " Where logID = 1) + 1 Where logID = 1",
+    function (err, rowCount, rows) {
+      console.log(rowCount + ' row(s) updated ');
+    }
+  );
+
+  var connection24 = new Connection(config);
+
+  connection24.on('connect', function (err) {
+    if (err) {
+      console.log(err)
+    }
+    else {
+      connection24.execSql(request24);
+      console.log("Data Updated");
+    }
+  });
+  connection24.end;
+}
+  
+function updateEbusiness() {
+  console.log("Updating Ebusiness");
+  //Reading
+  console.log("Reading rows from ltl96Log Table...Please wait...");
+  // Read all rows from table
+  request25 = new Request(
+    "Update ltl96Log Set ebusiness = (Select ebusiness From ltl96Log" +
+    " Where logID = 1) + 1 Where logID = 1",
+    function (err, rowCount, rows) {
+      console.log(rowCount + ' row(s) updated ');
+    }
+  );
+
+  var connection25 = new Connection(config);
+
+  connection25.on('connect', function (err) {
+    if (err) {
+      console.log(err)
+    }
+    else {
+      connection25.execSql(request25);
+      console.log("Data Updated");
+    }
+  });
+  connection25.end;
+}
+
+function updateOOP() {
+  console.log("Updating OOP");
+  //Reading
+  console.log("Reading rows from ltl96Log Table...Please wait...");
+  // Read all rows from table
+  request26 = new Request(
+    "Update ltl96Log Set oop = (Select oop From ltl96Log" +
+    " Where logID = 1) + 1 Where logID = 1",
+    function (err, rowCount, rows) {
+      console.log(rowCount + ' row(s) updated ');
+    }
+  );
+
+  var connection26 = new Connection(config);
+
+  connection26.on('connect', function (err) {
+    if (err) {
+      console.log(err)
+    }
+    else {
+      connection26.execSql(request26);
+      console.log("Data Updated");
+    }
+  });
+  connection26.end;
+}
+
+function updateWebApp() {
+  console.log("Updating WebApp");
+  //Reading
+  console.log("Reading rows from ltl96Log Table...Please wait...");
+  // Read all rows from table
+  request27 = new Request(
+    "Update ltl96Log Set webapp = (Select webapp From ltl96Log" +
+    " Where logID = 1) + 1 Where logID = 1",
+    function (err, rowCount, rows) {
+      console.log(rowCount + ' row(s) updated ');
+    }
+  );
+
+  var connection27 = new Connection(config);
+
+  connection27.on('connect', function (err) {
+    if (err) {
+      console.log(err)
+    }
+    else {
+      connection27.execSql(request27);
+      console.log("Data Updated");
+    }
+  });
+  connection27.end;
+}
 
 //Telegram credentials
 var TelegramBot = require('node-telegram-bot-api'),
@@ -638,6 +798,7 @@ telegram.on("text", (message) => {
 
   //Commands /help & /start
   if ((message.text.toLowerCase().indexOf("/help") == 0) || (message.text.toLowerCase().indexOf("/start") == 0)) {
+    
     telegram.sendMessage(message.chat.id, 
     "Hi, I am ltl96bot. I can help you understand Leonard better. 🙂"
     + "\n\nYou can control me by sending these commands:" + 
@@ -660,7 +821,13 @@ telegram.on("text", (message) => {
     "\n/snapchat - Leonard's Snapchat profile link" +
     "\n/linkedin - Leonard's Linkedin profile link" +
     "\n/email - Leonard's emaill address" +
-    "\n/telegram - Leonard's telegram account");
+    "\n/telegram - Leonard's telegram account" +
+    "\n/projectportfolio - Description of Personal Portfolio" +
+    "\n/projectpmd - Description of PMD Platform" +
+    "\n/projectfyp - Description of Final Year Project" +
+    "\n/projectebusiness - Description of E- Business & Project" +
+    "\n/projectoop - Description of Object- Oriented Programming Project" +
+    "\n/projectwebapp - Description of Web Applications Development");
     updateHelp()
   }
   else if(message.text.toLowerCase().indexOf("/who") == 0){
@@ -758,12 +925,12 @@ updateCertifications()
 }
 else if (message.text.toLowerCase().indexOf("/projects") == 0) {
   telegram.sendMessage(message.chat.id,"Leonard did these projects:\n" +
-  "Personal Portfolio" +
-  "\nPersonal Mobility Devices Renting Platform" +
-  "\nNYP Student Attendance System (Final Year Project)" +
-  "\nE-Business & Project" +
-  "\nObject-Oriented Programming" +
-  "\nWeb Applications Development");
+  "Personal Portfolio /projectportfolio" +
+  "\nPersonal Mobility Devices Renting Platform /projectpmd" +
+  "\nNYP Student Attendance System (Final Year Project) /projectfyp" +
+  "\nE-Business & Project /projectebusiness" +
+  "\nObject-Oriented Programming /projectoop" +
+  "\nWeb Applications Development /projectwebapp");
   updateProjects()
 }
 else if (message.text.toLowerCase().indexOf("/courses") == 0) {
@@ -851,8 +1018,124 @@ else if (message.text.toLowerCase().indexOf("/telegram") == 0) {
   "@leothelion96");
   updateTelegram()
 }
+  else if (message.text.toLowerCase().indexOf("/projectportfolio") == 0) {
+  telegram.sendMessage(message.chat.id,
+      "Personal Portfolio is a site that show Leonard's resume in a professional way through his own creation" +
+      "\n\nTools used to develop the site:" +
+      "\n• Microsoft Visual Studio 2017 Preview" +
+      "\n• MaterializeCSS framework" +
+      "\n• Microsoft Azure" +
+      "\n\nYou can visit the site at https://ltl96.tech");
+      updatePortfolio()
+}
+else if (message.text.toLowerCase().indexOf("/projectpmd") == 0) {
+    telegram.sendMessage(message.chat.id, "This project entails the idea of renting Personal Mobility Devices(PMD) through a consumer-to-consumer business model." +
+      "\nThis platform provide a unified platform for renting all PMD.With this platform, user will have a platform to rent their PMDs to people who desire to use it but lack the capability to own it" +
+      "\n\nTools used:" +
+      "\n• Microsoft Visual Studio 2015" +
+      "\n• Microsoft Azure" +
+      "\n• Microsoft Storage" +
+      "\n• MaterializeCSS framework" +
+      "\n• Digits API" +
+      "\n• Cloudinary API" +
+      "\n• Twilio SMS API" +
+      "\n• PayPal API" +
+      "\n• Braintree API" +
+      "\n• SimplifyCommerce API" +
+      "\n• pdfSharp API" +
+      "\n• Clarifal Image Recoginition API" +
+      "\n• sweetalert API");
+      updatePMD()
+}
+else if (message.text.toLowerCase().indexOf("/projectfyp") == 0) {
+    telegram.sendMessage(message.chat.id, "The objective of this project is to overhaul the user interface by creating a responsive design language that will automatically resize the content based on the user's device. " +
+      "Other than that, the design language is to complement the existing features found in existing Student Attendance System. " +
+      "\n\nAchievements:" +
+      "\nResponsible solely on all developemnt of the project" +
+      "\nAcquired knowledge on materializeCSS framework" +
+      "\nDeploy to Microsoft Azure and map it to my own domain for testing" +
+      "\n\nTools used:" +
+      "\n• Microsoft Visual Studio 2013" +
+      "\n• SQL Server 2012 Management Studio" +
+      "\n• MaterializeCSS framework" +
+      "\n• Microsoft Azure" +
+      "\n\n**Disclaimer: Due to the confidentiality of the project, I am not convenient to share further detailed information.***");
+      updateFYP()
+}
+else if (message.text.toLowerCase().indexOf("/projectebusiness") == 0) {
+    telegram.sendMessage(message.chat.id, "The objective of this project was to create an e-commerce website. A website that customer can browse through our wigs catalog and make purchase if they desired." +
+      "\nWith this website, customers who need to buy a wig, no longer need to feel ashamed as they do not need to visit a store." +
+      "\nSimply browse through our catalog, make a purchase and have it deliver to your doorstep." +
+      "\n\nFeatures added in projects not taught in class includes:" +
+      "\n• Microsoft Azure" +
+      "\n• Stripe Payment System API" +
+      "\n• Twilio SMS API," +
+      "\n• PDFGenerated Receipt with customer & orders details" +
+      "\n• Sending Email with the PDF Generated Receipt" +
+      "\n\nIDE/Tools used:" +
+      "\n• Microsoft Visual Studio 2010" +
+      "\n• Microsoft Azure");
+      updateEbusiness()
+}
+else if (message.text.toLowerCase().indexOf("/projectoop") == 0) {
+    telegram.sendMessage(message.chat.id, "The aim of this project is to create a better shopping experience through a software system." +
+      "\nOur team decided to create a pre- order system that allows customers to pre- order the items they want." +
+      "\nCustomer will be able to choose to collect items themselves or have it deliver to their doorstep." +
+      "\nFeatures added to the project that was not taught in class include read & write images to folder & sending email" +
+      "\n\nIDE/Tools used:" +
+      "\n• Eclipse" +
+      "\n• mySQL");
+      updateOOP()
+}
+else if (message.text.toLowerCase().indexOf("/projectwebapp") == 0) {
+    telegram.sendMessage(message.chat.id, "The aim of this project is to create a responsive website of any company using HTML, CSS & JavaScript. Chose Marina Bay Sands as the company." +
+      "Features added include scroll to top with smooth animation. " +
+      "\n\nIDE/Tools used:" +
+      "\n• Notepad++");
+      updateWebApp()
+}
 else {
   telegram.sendMessage(message.chat.id,"Unidentified command. Please type /help for the list of commands.");
   updateUnidentified()
 }
 });
+
+/*telegram.onText(/\/projectDetails/, function onProjectsDetailsText(msg, match) {
+  telegram.sendMessage(msg.chat.id, "Select a project you want to know more" +
+    "\n1. Personal Portfolio" +
+    "\n2. Personal Mobility Devices Renting Platform" +
+    "\n3. Final Year Project" +
+    "\n4. E-Business & Project" +
+    "\n5. Object-Oriented Programming" +
+    "\n6. Web Applications Development", {
+      "reply_markup": {
+        "keyboard": [
+          [{ text: "1" }],
+          [{ text: "2" }],
+          [{ text: "3" }],
+          [{ text: "4" }],
+          [{ text: "5" }],
+          [{ text: "6" }]
+        ],
+        "one_time_keyboard": true
+      }
+    });
+  telegram.onText(/1/, function (msg, match) {
+    telegram.sendMessage(msg.chat.id, "You selected Personal Portfolio");
+  });
+  telegram.onText(/2/, function (msg, match) {
+    telegram.sendMessage(msg.chat.id, "You selected Personal Mobility Devices Renting Platform");
+  });
+  telegram.onText(/3/, function (msg, match) {
+    telegram.sendMessage(msg.chat.id, "You selected Final Year Project");
+  });
+  telegram.onText(/4/, function (msg, match) {
+    telegram.sendMessage(msg.chat.id, "You selected E-Business & Project");
+  });
+  telegram.onText(/5/, function (msg, match) {
+    telegram.sendMessage(msg.chat.id, "You selected Object-Oriented Programming");
+  });
+  telegram.onText(/6/, function (msg, match) {
+    telegram.sendMessage(msg.chat.id, "You selected Web Applications Development");
+  });
+});*/
