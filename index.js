@@ -831,14 +831,15 @@ telegram.on("text", (message) => {
     updateHelp()
   }
   else if(message.text.toLowerCase().indexOf("/who") == 0){
-    telegram.sendMessage(message.chat.id, "Leonard is going to be a student at Singapore Management University in 2019." +
-   // "He will concurrently read Bachelor of Science (Information Systems): Information Systems Major & Master of Applied Information Systems: Software & Cyber-Physical Systems track." +
+    telegram.sendMessage(message.chat.id, "Leonard is a full-time student at Singapore Management University." +
+    "He will concurrently read Bachelor of Science (Information Systems): Information Systems Major & Master of Applied Information Systems: Software & Cyber-Physical Systems track." +
     "\nHe like technology a lot.\n\nType /social to connect with him. 😆");
     updateWho()
   }
   else if (message.text.toLowerCase().indexOf("/summary") == 0) {
-  telegram.sendMessage(message.chat.id, "Leonard is going to be a student at Singapore Management University (SMU)" +
-  " in 2019, reading Bachelor of Science (Information Systems): Information Systems Major." +
+  telegram.sendMessage(message.chat.id, "Leonard is a full-time student at Singapore Management University (SMU)" +
+  ", reading Bachelor of Science (Information Systems): Information Systems Major. " +
+  "Concurrently, he will read Master of Applied Information Systems: Software & Cyber Physical Systems track, under SMU SIS Local Fast-Track Scholarship. " +
   "\n\nPrior to SMU, he was a student at Nanyang Polytechnic (NYP), where he attained Diploma in Business Informatics with Merit." +
   " At the same time, he found passion in Information Technology that led him to achieved 4 Distinctions & 14 A's throughout his studies" +
   " at NYP while achieved 3 A+, 1 A0 & 1 B0 during his studies in Gachon University as an Exchange Programme Student. During his studies in NYP," +
@@ -857,8 +858,8 @@ else if(message.text.toLowerCase().indexOf("/website") == 0) {
   updateWebsite()
 }
 else if(message.text.toLowerCase().indexOf("/education") == 0) {
-  telegram.sendMessage(message.chat.id, "In 2019, Leonard is going to be a student at Singapore Management University (SMU) where he will read Bachelor of Science (Information Systems): Information Systems Major" +
-  //" & Master of Applied Information Systems: Software & Cyber-Physical Systems track" +
+  telegram.sendMessage(message.chat.id, "Leonard is a full-time student at Singapore Management University (SMU) where he will read Bachelor of Science (Information Systems): Information Systems Major" +
+  " & Master of Applied Information Systems: Software & Cyber-Physical Systems track" +
   "\n\nIn 2017, he graduated with a Diploma in Business Informatics with Merit from Nanyang Polytechnic (NYP)" +
   "\nDuring his studies in NYP, he was an overseas exchange student at Gachon University." +
   "\n\nHe graduated from Beatty Secondary School & Kheng Cheng School in 2013 & 2008 respectively");
