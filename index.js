@@ -31,22 +31,22 @@ var Request = require('tedious').Request;
 
 // Create connection to database
 var config = {
-  userName: 'ltl96bot',
-  password: 'MmCyRaAJPyHynVbwbErFkTEtzXnq>FpGeYnbeohJTu8yetPyJkWXwAPebfw6ayQR',
-  server: 'ltl96bot.database.windows.net',
+  userName:'',
+  password: '',
+  server: '',
   options: {
-    database: 'ltl96botLoggingDB',
+    database: '',
     encrypt: true
   }
 }
 function updateHelp() {
  console.log("Updating /help");
   //Reading
-  console.log("Reading rows from ltl96Log Table...Please wait...");
+  console.log("Reading rows from ''Table...Please wait...");
   // Read all rows from table
   request2 = new Request(
-    "Update ltl96Log Set help = (Select help From ltl96Log" +
-    " Where logID = 1) + 1 Where logID = 1",
+    "Update '' Set help = (Select help From ''" +
+    " Where ID = 1) + 1 Where ID = 1",
     function (err, rowCount, rows) {
       console.log(rowCount + ' row(s) updated ');
     }
@@ -69,11 +69,11 @@ function updateHelp() {
 function updateWho() {
   console.log("Updating /who");
   //Reading
-  console.log("Reading rows from ltl96Log Table...Please wait...");
+  console.log("Reading rows from Table...Please wait...");
   // Read all rows from table
   request3 = new Request(
-    "Update ltl96Log Set who = (Select who From ltl96Log" +
-    " Where logID = 1) + 1 Where logID = 1",
+    "Update Table Set who = (Select who From Table" +
+    " Where ID = 1) + 1 Where ID = 1",
     function (err, rowCount, rows) {
       console.log(rowCount + ' row(s) updated ');
     }
@@ -96,11 +96,11 @@ function updateWho() {
 function updateSummary() {
   console.log("Updating /summary");
   //Reading
-  console.log("Reading rows from ltl96Log Table...Please wait...");
+  console.log("Reading rows from Table...Please wait...");
   // Read all rows from table
   request4 = new Request(
-    "Update ltl96Log Set summary = (Select summary From ltl96Log" +
-    " Where logID = 1) + 1 Where logID = 1",
+    "Update Table Set summary = (Select summary From Table" +
+    " Where ID = 1) + 1 Where ID = 1",
     function (err, rowCount, rows) {
       console.log(rowCount + ' row(s) updated ');
     }
@@ -123,10 +123,10 @@ function updateSummary() {
 function updateWebsite() {
   console.log("Updating /website");
   //Reading
-  console.log("Reading rows from ltl96Log Table...Please wait...");
+  console.log("Reading rows from Table...Please wait...");
   // Read all rows from table
   request5 = new Request(
-    "Update ltl96Log Set website = (Select website From ltl96Log" +
+    "Update Table Set website = (Select website From Table" +
     " Where logID = 1) + 1 Where logID = 1",
     function (err, rowCount, rows) {
       console.log(rowCount + ' row(s) updated ');
@@ -150,10 +150,10 @@ function updateWebsite() {
 function updateVolunteer() {
   console.log("Updating /volunteer");
   //Reading
-  console.log("Reading rows from ltl96Log Table...Please wait...");
+  console.log("Reading rows from Table...Please wait...");
   // Read all rows from table
   request6 = new Request(
-    "Update ltl96Log Set volunteer = (Select volunteer From ltl96Log" +
+    "Update Table Set volunteer = (Select volunteer From Table" +
     " Where logID = 1) + 1 Where logID = 1",
     function (err, rowCount, rows) {
       console.log(rowCount + ' row(s) updated ');
@@ -177,10 +177,10 @@ function updateVolunteer() {
 function updateEducation() {
   console.log("Updating /education");
   //Reading
-  console.log("Reading rows from ltl96Log Table...Please wait...");
+  console.log("Reading rows from Table Table...Please wait...");
   // Read all rows from table
   request6 = new Request(
-    "Update ltl96Log Set education = (Select education From ltl96Log" +
+    "Update Table Set education = (Select education From Table" +
     " Where logID = 1) + 1 Where logID = 1",
     function (err, rowCount, rows) {
       console.log(rowCount + ' row(s) updated ');
@@ -204,10 +204,10 @@ function updateEducation() {
 function updateExperience() {
   console.log("Updating /experience");
   //Reading
-  console.log("Reading rows from ltl96Log Table...Please wait...");
+  console.log("Reading rows from Table Table...Please wait...");
   // Read all rows from table
   request7 = new Request(
-    "Update ltl96Log Set experience = (Select experience From ltl96Log" +
+    "Update Table Set experience = (Select experience From Table" +
     " Where logID = 1) + 1 Where logID = 1",
     function (err, rowCount, rows) {
       console.log(rowCount + ' row(s) updated ');
@@ -231,10 +231,10 @@ function updateExperience() {
 function updateSkills() {
   console.log("Updating /skills");
   //Reading
-  console.log("Reading rows from ltl96Log Table...Please wait...");
+  console.log("Reading rows from Table Table...Please wait...");
   // Read all rows from table
   request8 = new Request(
-    "Update ltl96Log Set skills = (Select skills From ltl96Log" +
+    "Update Table Set skills = (Select skills From Table" +
     " Where logID = 1) + 1 Where logID = 1",
     function (err, rowCount, rows) {
       console.log(rowCount + ' row(s) updated ');
@@ -258,10 +258,10 @@ function updateSkills() {
 function updatehonors() {
   console.log("Updating /honors");
   //Reading
-  console.log("Reading rows from ltl96Log Table...Please wait...");
+  console.log("Reading rows from Table Table...Please wait...");
   // Read all rows from table
   request9 = new Request(
-    "Update ltl96Log Set honors = (Select honors From ltl96Log" +
+    "Update Table Set honors = (Select honors From Table" +
     " Where logID = 1) + 1 Where logID = 1",
     function (err, rowCount, rows) {
       console.log(rowCount + ' row(s) updated ');
@@ -285,10 +285,10 @@ function updatehonors() {
 function updateCertifications() {
   console.log("Updating /certifications");
   //Reading
-  console.log("Reading rows from ltl96Log Table...Please wait...");
+  console.log("Reading rows from Table Table...Please wait...");
   // Read all rows from table
   request10 = new Request(
-    "Update ltl96Log Set certifications = (Select certifications From ltl96Log" +
+    "Update Table Set certifications = (Select certifications From Table" +
     " Where logID = 1) + 1 Where logID = 1",
     function (err, rowCount, rows) {
       console.log(rowCount + ' row(s) updated ');
@@ -312,10 +312,10 @@ function updateCertifications() {
 function updateProjects() {
   console.log("Updating /projects");
   //Reading
-  console.log("Reading rows from ltl96Log Table...Please wait...");
+  console.log("Reading rows from Table Table...Please wait...");
   // Read all rows from table
   request11 = new Request(
-    "Update ltl96Log Set projects = (Select projects From ltl96Log" +
+    "Update Table Set projects = (Select projects From Table" +
     " Where logID = 1) + 1 Where logID = 1",
     function (err, rowCount, rows) {
       console.log(rowCount + ' row(s) updated ');
@@ -340,10 +340,10 @@ function updateProjects() {
 function updateCourses() {
   console.log("Updating /courses");
   //Reading
-  console.log("Reading rows from ltl96Log Table...Please wait...");
+  console.log("Reading rows from Table Table...Please wait...");
   // Read all rows from table
   request12 = new Request(
-    "Update ltl96Log Set courses = (Select courses From ltl96Log" +
+    "Update Table Set courses = (Select courses From Table" +
     " Where logID = 1) + 1 Where logID = 1",
     function (err, rowCount, rows) {
       console.log(rowCount + ' row(s) updated ');
@@ -367,10 +367,10 @@ function updateCourses() {
 function updateSocial() {
   console.log("Updating /social");
   //Reading
-  console.log("Reading rows from ltl96Log Table...Please wait...");
+  console.log("Reading rows from Table Table...Please wait...");
   // Read all rows from table
   request13 = new Request(
-    "Update ltl96Log Set social = (Select social From ltl96Log" +
+    "Update Table Set social = (Select social From Table" +
     " Where logID = 1) + 1 Where logID = 1",
     function (err, rowCount, rows) {
       console.log(rowCount + ' row(s) updated ');
@@ -394,10 +394,10 @@ function updateSocial() {
 function updateFacebook() {
   console.log("Updating /facebook");
   //Reading
-  console.log("Reading rows from ltl96Log Table...Please wait...");
+  console.log("Reading rows from Table Table...Please wait...");
   // Read all rows from table
   request14 = new Request(
-    "Update ltl96Log Set facebook = (Select facebook From ltl96Log" +
+    "Update Table Set facebook = (Select facebook From Table" +
     " Where logID = 1) + 1 Where logID = 1",
     function (err, rowCount, rows) {
       console.log(rowCount + ' row(s) updated ');
@@ -421,10 +421,10 @@ function updateFacebook() {
 function updateTwitter() {
   console.log("Updating /projects");
   //Reading
-  console.log("Reading rows from ltl96Log Table...Please wait...");
+  console.log("Reading rows from Table Table...Please wait...");
   // Read all rows from table
   request15 = new Request(
-    "Update ltl96Log Set twitter = (Select twitter From ltl96Log" +
+    "Update Table Set twitter = (Select twitter From Table" +
     " Where logID = 1) + 1 Where logID = 1",
     function (err, rowCount, rows) {
       console.log(rowCount + ' row(s) updated ');
@@ -448,10 +448,10 @@ function updateTwitter() {
 function updateInstagram() {
   console.log("Updating /instagram");
   //Reading
-  console.log("Reading rows from ltl96Log Table...Please wait...");
+  console.log("Reading rows from Table Table...Please wait...");
   // Read all rows from table
   request16 = new Request(
-    "Update ltl96Log Set instagram = (Select instagram From ltl96Log" +
+    "Update Table Set instagram = (Select instagram From Table" +
     " Where logID = 1) + 1 Where logID = 1",
     function (err, rowCount, rows) {
       console.log(rowCount + ' row(s) updated ');
@@ -475,10 +475,10 @@ function updateInstagram() {
 function updateSnapchat() {
   console.log("Updating /snapchat");
   //Reading
-  console.log("Reading rows from ltl96Log Table...Please wait...");
+  console.log("Reading rows from Table Table...Please wait...");
   // Read all rows from table
   request17 = new Request(
-    "Update ltl96Log Set snapchat = (Select snapchat From ltl96Log" +
+    "Update Table Set snapchat = (Select snapchat From Table" +
     " Where logID = 1) + 1 Where logID = 1",
     function (err, rowCount, rows) {
       console.log(rowCount + ' row(s) updated ');
@@ -502,10 +502,10 @@ function updateSnapchat() {
 function updateLinkedin() {
   console.log("Updating /linkedin");
   //Reading
-  console.log("Reading rows from ltl96Log Table...Please wait...");
+  console.log("Reading rows from Table Table...Please wait...");
   // Read all rows from table
   request18 = new Request(
-    "Update ltl96Log Set linkedin = (Select linkedin From ltl96Log" +
+    "Update Table Set linkedin = (Select linkedin From Table" +
     " Where logID = 1) + 1 Where logID = 1",
     function (err, rowCount, rows) {
       console.log(rowCount + ' row(s) updated ');
@@ -529,10 +529,10 @@ function updateLinkedin() {
 function updateEmail() {
   console.log("Updating /email");
   //Reading
-  console.log("Reading rows from ltl96Log Table...Please wait...");
+  console.log("Reading rows from Table Table...Please wait...");
   // Read all rows from table
   request19 = new Request(
-    "Update ltl96Log Set email = (Select email From ltl96Log" +
+    "Update Table Set email = (Select email From Table" +
     " Where logID = 1) + 1 Where logID = 1",
     function (err, rowCount, rows) {
       console.log(rowCount + ' row(s) updated ');
@@ -556,10 +556,10 @@ function updateEmail() {
 function updateTelegram() {
   console.log("Updating /telegram");
   //Reading
-  console.log("Reading rows from ltl96Log Table...Please wait...");
+  console.log("Reading rows from Table Table...Please wait...");
   // Read all rows from table
   request20 = new Request(
-    "Update ltl96Log Set telegram = (Select telegram From ltl96Log" +
+    "Update Table Set telegram = (Select telegram From Table" +
     " Where logID = 1) + 1 Where logID = 1",
     function (err, rowCount, rows) {
       console.log(rowCount + ' row(s) updated ');
@@ -583,10 +583,10 @@ function updateTelegram() {
 function updateUnidentified() {
   console.log("Updating unidentified");
   //Reading
-  console.log("Reading rows from ltl96Log Table...Please wait...");
+  console.log("Reading rows from Table Table...Please wait...");
   // Read all rows from table
   request21 = new Request(
-    "Update ltl96Log Set unidentified = (Select unidentified From ltl96Log" +
+    "Update Table Set unidentified = (Select unidentified From Table" +
     " Where logID = 1) + 1 Where logID = 1",
     function (err, rowCount, rows) {
       console.log(rowCount + ' row(s) updated ');
@@ -610,10 +610,10 @@ function updateUnidentified() {
 function updatePortfolio() {
   console.log("Updating portfolio");
   //Reading
-  console.log("Reading rows from ltl96Log Table...Please wait...");
+  console.log("Reading rows from Table Table...Please wait...");
   // Read all rows from table
   request22 = new Request(
-    "Update ltl96Log Set portfolio = (Select portfolio From ltl96Log" +
+    "Update Table Set portfolio = (Select portfolio From Table" +
     " Where logID = 1) + 1 Where logID = 1",
     function (err, rowCount, rows) {
       console.log(rowCount + ' row(s) updated ');
@@ -637,10 +637,10 @@ function updatePortfolio() {
 function updatePMD() {
   console.log("Updating PMD");
   //Reading
-  console.log("Reading rows from ltl96Log Table...Please wait...");
+  console.log("Reading rows from Table Table...Please wait...");
   // Read all rows from table
   request23 = new Request(
-    "Update ltl96Log Set pmd = (Select pmd From ltl96Log" +
+    "Update Table Set pmd = (Select pmd From Table" +
     " Where logID = 1) + 1 Where logID = 1",
     function (err, rowCount, rows) {
       console.log(rowCount + ' row(s) updated ');
@@ -664,10 +664,10 @@ function updatePMD() {
 function updateFYP() {
   console.log("Updating FYP");
   //Reading
-  console.log("Reading rows from ltl96Log Table...Please wait...");
+  console.log("Reading rows from Table Table...Please wait...");
   // Read all rows from table
   request24 = new Request(
-    "Update ltl96Log Set fyp = (Select fyp From ltl96Log" +
+    "Update Table Set fyp = (Select fyp From Table" +
     " Where logID = 1) + 1 Where logID = 1",
     function (err, rowCount, rows) {
       console.log(rowCount + ' row(s) updated ');
@@ -691,10 +691,10 @@ function updateFYP() {
 function updateEbusiness() {
   console.log("Updating Ebusiness");
   //Reading
-  console.log("Reading rows from ltl96Log Table...Please wait...");
+  console.log("Reading rows from Table Table...Please wait...");
   // Read all rows from table
   request25 = new Request(
-    "Update ltl96Log Set ebusiness = (Select ebusiness From ltl96Log" +
+    "Update Table Set ebusiness = (Select ebusiness From Table" +
     " Where logID = 1) + 1 Where logID = 1",
     function (err, rowCount, rows) {
       console.log(rowCount + ' row(s) updated ');
@@ -718,10 +718,10 @@ function updateEbusiness() {
 function updateOOP() {
   console.log("Updating OOP");
   //Reading
-  console.log("Reading rows from ltl96Log Table...Please wait...");
+  console.log("Reading rows from Table Table...Please wait...");
   // Read all rows from table
   request26 = new Request(
-    "Update ltl96Log Set oop = (Select oop From ltl96Log" +
+    "Update Table Set oop = (Select oop From Table" +
     " Where logID = 1) + 1 Where logID = 1",
     function (err, rowCount, rows) {
       console.log(rowCount + ' row(s) updated ');
@@ -745,10 +745,10 @@ function updateOOP() {
 function updateWebApp() {
   console.log("Updating WebApp");
   //Reading
-  console.log("Reading rows from ltl96Log Table...Please wait...");
+  console.log("Reading rows from Table Table...Please wait...");
   // Read all rows from table
   request27 = new Request(
-    "Update ltl96Log Set webapp = (Select webapp From ltl96Log" +
+    "Update Table Set webapp = (Select webapp From Table" +
     " Where logID = 1) + 1 Where logID = 1",
     function (err, rowCount, rows) {
       console.log(rowCount + ' row(s) updated ');
@@ -777,7 +777,7 @@ telegram.on("text", (message) => {
 
   console.log("Inserting Comment...");
   request22 = new Request(
-    "INSERT INTO ltl96Comment (comment) VALUES('" + message.text + "')",
+    "INSERT INTO TableComment (comment) VALUES('" + message.text + "')",
     function (err, rowCount, rows) {
       console.log(rowCount + ' row(s) inserted');
     }
@@ -800,7 +800,7 @@ telegram.on("text", (message) => {
   if ((message.text.toLowerCase().indexOf("/help") == 0) || (message.text.toLowerCase().indexOf("/start") == 0)) {
     
     telegram.sendMessage(message.chat.id, 
-    "Hi, I am ltl96bot. I can help you understand Leonard better. 🙂"
+    "Hi, I am Tablebot. I can help you understand Leonard better. 🙂"
     + "\n\nYou can control me by sending these commands:" + 
     "\n\n/help - List of commands you can send" +
     "\n/who - A short introduction of who Leonard is" +
@@ -854,7 +854,7 @@ telegram.on("text", (message) => {
   updateSummary()
 }
 else if(message.text.toLowerCase().indexOf("/website") == 0) {
-  telegram.sendMessage(message.chat.id, "You can visit the website at: https://ltl96.tech");
+  telegram.sendMessage(message.chat.id, "You can visit the website at: https://Table.tech");
   updateWebsite()
 }
 else if(message.text.toLowerCase().indexOf("/education") == 0) {
@@ -1011,7 +1011,7 @@ else if (message.text.toLowerCase().indexOf("/linkedin") == 0) {
 }
 else if (message.text.toLowerCase().indexOf("/email") == 0) {
   telegram.sendMessage(message.chat.id, "You can send email to Leonard at " +
-  "leonard@ltl96.tech");
+  "leonard@Table.tech");
   updateEmail()
 } 
 else if (message.text.toLowerCase().indexOf("/telegram") == 0) {
@@ -1026,7 +1026,7 @@ else if (message.text.toLowerCase().indexOf("/telegram") == 0) {
       "\n• Microsoft Visual Studio 2017 Preview" +
       "\n• MaterializeCSS framework" +
       "\n• Microsoft Azure" +
-      "\n\nYou can visit the site at https://ltl96.tech");
+      "\n\nYou can visit the site at https://Table.tech");
       updatePortfolio()
 }
 else if (message.text.toLowerCase().indexOf("/projectpmd") == 0) {
