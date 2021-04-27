@@ -771,7 +771,7 @@ function updateWebApp() {
 
 //Telegram credentials
 var TelegramBot = require('node-telegram-bot-api'),
-    telegram = new TelegramBot("242777033:AAGRdoWT0J3oeCFeEhqyG50hAXCPk6fcpFs", { polling: true });
+    telegram = new TelegramBot("", { polling: true });
 
 telegram.on("text", (message) => {
 
